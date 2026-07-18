@@ -66,7 +66,12 @@ function addModelToScene(
 
   for (let i = 0; i < geometries.length; i++) {
     const geometry = geometries[i];
-    const material = materials[i] ?? new THREE.MeshStandardMaterial({ color: 0xcccccc });
+    const material =
+      materials[i] ??
+      new THREE.MeshBasicMaterial({
+        color: 0xcccccc,
+        side: THREE.DoubleSide,
+      });
     const mesh = new THREE.Mesh(geometry, material);
     scene.add(mesh);
     meshes.push(mesh);
@@ -129,7 +134,13 @@ export function ThreeViewport(): React.ReactElement {
     if (!container) return;
 
     // Renderer
-    const renderer = new THREE.WebGLRenderer({ antialias: true });
+    const renderer = new THREE.WebGLRenderer({
+      antialias: true,
+      powerPreference: 'high-performance',
+    });
+    renderer.outputColorSpace = THREE.SRGBColorSpace;
+    renderer.toneMapping = THREE.NoToneMapping;
+    renderer.toneMappingExposure = 1.0;
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(container.clientWidth, container.clientHeight);
     renderer.setClearColor(0xf0f0f0);
@@ -149,12 +160,18 @@ export function ThreeViewport(): React.ReactElement {
     sceneRef.current = scene;
 
     // Lights
-    const ambientLight = new THREE.AmbientLight(0xffffff, 0.6);
+    const ambientLight = new THREE.AmbientLight(0xffffff, 1.8);
     scene.add(ambientLight);
 
-    const dirLight = new THREE.DirectionalLight(0xffffff, 0.8);
-    dirLight.position.set(1, 2, 3);
+    const dirLight = new THREE.DirectionalLight(0xffffff, 2.5);
+    dirLight.position.set(5, 8, 5);
+
     scene.add(dirLight);
+
+    const fillLight = new THREE.DirectionalLight(0xffffff, 1.2);
+    fillLight.position.set(-5, 3, -5);
+
+    scene.add(fillLight);
 
     // Camera — perspective with a 45° FoV
     const camera = new THREE.PerspectiveCamera(
@@ -203,7 +220,7 @@ export function ThreeViewport(): React.ReactElement {
     const resizeObserver = new ResizeObserver(() => {
       if (!container) return;
       const w = container.clientWidth;
-      const h = container.clientHeight;
+      const h = Math.max(container.clientHeight, 560);
       renderer.setSize(w, h);
       camera.aspect = w / h;
       camera.updateProjectionMatrix();
@@ -219,7 +236,7 @@ export function ThreeViewport(): React.ReactElement {
       sceneRef.current = null;
       cameraRef.current = null;
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); // intentionally empty — initialise once
 
   // ---------------------------------------------------------------------------
@@ -295,7 +312,7 @@ export function ThreeViewport(): React.ReactElement {
       style={{
         position: 'relative',
         width: '100%',
-        height: '100%',
+        height: 'clamp(400px, 70vh, 700px)',
         overflow: 'hidden',
         background: '#f0f0f0',
       }}

@@ -92,15 +92,15 @@ async function tryParseWithOpenskp(
       typeof mod.parseSkp === 'function'
         ? (mod.parseSkp as (b: ArrayBuffer) => unknown)
         : typeof maybeDefault?.parseSkp === 'function'
-        ? (maybeDefault.parseSkp as (b: ArrayBuffer) => unknown)
-        : undefined;
+          ? (maybeDefault.parseSkp as (b: ArrayBuffer) => unknown)
+          : undefined;
 
     toGLB =
       typeof mod.toGLB === 'function'
         ? (mod.toGLB as (model: unknown) => Uint8Array)
         : typeof maybeDefault?.toGLB === 'function'
-        ? (maybeDefault.toGLB as (model: unknown) => Uint8Array)
-        : undefined;
+          ? (maybeDefault.toGLB as (model: unknown) => Uint8Array)
+          : undefined;
   } catch (err) {
     console.warn('openskp unavailable in browser; falling back to built-in reader.', err);
     return null;
@@ -133,12 +133,44 @@ async function tryParseWithOpenskp(
   });
 
   const geometries: THREE.BufferGeometry[] = [];
+  const materials: THREE.Material[] = [];
+
   gltf.scene.traverse((node: any) => {
     if (node.isMesh) {
       const mesh = node as THREE.Mesh;
-      if (mesh.geometry) {
-        geometries.push(mesh.geometry as THREE.BufferGeometry);
+
+      if (!mesh.geometry) {
+        return;
       }
+
+      geometries.push(mesh.geometry as THREE.BufferGeometry);
+
+      const material = Array.isArray(mesh.material)
+        ? mesh.material[0]
+        : mesh.material;
+
+      if (material instanceof THREE.MeshStandardMaterial) {
+        material.side = THREE.DoubleSide;
+        material.metalness = 0;
+        material.roughness = 1;
+        material.needsUpdate = true;
+      }
+
+      const finalMaterial =
+        material instanceof THREE.MeshStandardMaterial
+          ? new THREE.MeshBasicMaterial({
+            color: material.color,
+            side: THREE.DoubleSide,
+          })
+          : material;
+
+      materials.push(
+        finalMaterial ??
+        new THREE.MeshBasicMaterial({
+          color: 0xc8c8c8,
+          side: THREE.DoubleSide,
+        })
+      );
     }
   });
 
@@ -148,7 +180,8 @@ async function tryParseWithOpenskp(
     );
   }
 
-  return buildParsedModel(geometries);
+
+  return buildParsedModel(geometries, materials);
 }
 
 // ---------------------------------------------------------------------------
@@ -228,14 +261,10 @@ function tryBuiltInReader(buffer: ArrayBuffer): ParsedModel {
  * Wraps an array of geometries into a `ParsedModel`, computing the aggregate
  * bounding box from all geometry positions.
  */
-function buildParsedModel(geometries: THREE.BufferGeometry[]): ParsedModel {
-  const materials: THREE.Material[] = geometries.map(
-    () =>
-      new THREE.MeshStandardMaterial({
-        color: 0xc8c8c8,
-        side: THREE.DoubleSide,
-      })
-  );
+function buildParsedModel(
+  geometries: THREE.BufferGeometry[],
+  materials: THREE.Material[]
+): ParsedModel {
 
   // Compute aggregate bounding box across all geometries.
   const boundingBox = new THREE.Box3();
@@ -342,7 +371,7 @@ export async function parseSkpFile(file: File): Promise<ParsedModel> {
   if (!hasValidSkpHeader(buffer)) {
     throw new Error(
       `"${file.name}" does not appear to be a valid SketchUp file. ` +
-        'The file header does not match any known SKP format signature.'
+      'The file header does not match any known SKP format signature.'
     );
   }
 
