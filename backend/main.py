@@ -7,6 +7,7 @@ Exposes:
 """
 
 from __future__ import annotations
+import os
 
 from fastapi import FastAPI, Request
 from fastapi.exceptions import RequestValidationError
@@ -17,20 +18,27 @@ from pydantic import ValidationError
 from .models import RenderPayload
 from .pdf_assembler import assemble_pdf
 
-app = FastAPI(title="SketchUp-to-PDF Converter", version="1.0.0")
+app = FastAPI(title="SketchUp-to-PDF Converter", version="0.9.0")
 
 # ---------------------------------------------------------------------------
 # CORS — allow requests from localhost during development
 # ---------------------------------------------------------------------------
 
+frontend_url = os.getenv("FRONTEND_URL")
+
+allowed_origins = [
+    "http://localhost:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:5173",
+    "http://127.0.0.1:3000",
+]
+
+if frontend_url:
+    allowed_origins.append(frontend_url)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[
-        "http://localhost:5173",  # Vite dev server default
-        "http://localhost:3000",
-        "http://127.0.0.1:5173",
-        "http://127.0.0.1:3000",
-    ],
+    allow_origins=allowed_origins,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
