@@ -3,6 +3,7 @@
 __pycache__/
 *.pyc
 .pytest_cache/
+*.egg-info/
 
 # Node
 node_modules/
@@ -28,6 +29,10 @@ npm-debug.log*
 # Coverage
 .coverage
 htmlcov/
+coverage.xml
+
+# Database
+*.sqlite3
 
 # Misc
 *.tmp
