@@ -5,6 +5,7 @@ import type { AppState, ParsedModel, AnnotationData, PresetViewName } from '../t
 import { PRESET_VIEWS, ORDERED_VIEWS } from '../types';
 import { derivePdfFilename } from './filename';
 import { renderViewHighRes } from '../renderers/highResRenderer';
+import { generatePdf } from './pdfGenerator';
 
 type BackendViewPayload = {
   view_name: PresetViewName;
@@ -66,30 +67,11 @@ export async function performExport(
 
     dispatch({ type: 'SET_EXPORT_STATUS', status: 'uploading' });
 
-    const filename = state.uploadedFile ? derivePdfFilename(state.uploadedFile.name) : 'model-views.pdf';
+    const filename = state.uploadedFile
+      ? derivePdfFilename(state.uploadedFile.name)
+      : 'model-views.pdf';
 
-    const response = await fetch('/generate-pdf', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ views: payloadViews, filename }),
-    });
-
-    if (!response.ok) {
-      const body = await response.text();
-      throw new Error(`PDF service error: ${response.status} ${response.statusText} ${body}`);
-    }
-
-    const blob = await response.blob();
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = url;
-    link.download = filename;
-    document.body.appendChild(link);
-    link.click();
-    link.remove();
-    URL.revokeObjectURL(url);
+    await generatePdf(payloadViews, filename);
 
     dispatch({ type: 'SET_EXPORT_STATUS', status: 'done' });
   } catch (error) {
