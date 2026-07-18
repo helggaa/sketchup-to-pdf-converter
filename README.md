@@ -23,11 +23,11 @@ https://helggaa.github.io/sketchup-to-pdf-converter/
 
 ### Upload SketchUp Model
 
-![Upload page](docs/screenshots/upload-page.jpg)
+![Upload page](frontend/docs/screenshots/upload-page.jpg)
 
 ### Interactive 3D Viewport
 
-![3D viewport](docs/screenshots/viewport.jpg)
+![3D viewport](frontend/docs/screenshots/viewport.jpg)
 
 
 ---
