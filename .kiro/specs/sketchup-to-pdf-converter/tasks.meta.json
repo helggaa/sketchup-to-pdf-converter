@@ -1,0 +1,394 @@
+{
+  "pbtResults": {},
+  "executionHistory": {
+    "1. Scaffold project structure and shared types": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038021393
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038038687
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038543567
+      }
+    ],
+    "2.1 Create `frontend/src/utils/fileValidation.ts` implementing `validateSkpFile`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038022346
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038548771
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784040124308
+      }
+    ],
+    "2.3 Build `frontend/src/components/UploadZone.tsx`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038022549
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784040131127
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089380680
+      }
+    ],
+    "3.1 Create `frontend/src/parsers/skpParser.ts` exposing `parseSkpFile(file: File): Promise<ParsedModel>`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038022649
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038551159
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784040125224
+      }
+    ],
+    "4.1 Create `frontend/src/components/ThreeViewport.tsx`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038022739
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784040131944
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784088468813
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089381394
+      }
+    ],
+    "4.2 Implement camera switching in `ThreeViewport`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038022856
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089399504
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089441630
+      }
+    ],
+    "5. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038022953
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089399692
+      }
+    ],
+    "6.1 Create `frontend/src/components/ViewSelector.tsx`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023060
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089399963
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089442365
+      }
+    ],
+    "7.1 Create `frontend/src/renderers/thumbnailRenderer.ts` exposing `renderThumbnail(scene, view, boundingBox): Promise<string>`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023153
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089400101
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089443236
+      }
+    ],
+    "7.2 Create `frontend/src/components/ThumbnailPreviewPanel.tsx`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023247
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089400267
+      }
+    ],
+    "8.1 Create `frontend/src/components/AnnotationPanel.tsx`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023330
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089400483
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089444057
+      }
+    ],
+    "9. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023446
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089400607
+      }
+    ],
+    "10.1 Create `frontend/src/renderers/highResRenderer.ts` exposing `renderViewHighRes(scene, view, boundingBox): Promise<string>`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023614
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089400744
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089445014
+      }
+    ],
+    "10.3 Create `frontend/src/utils/exportFlow.ts` implementing the export orchestration function": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023695
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089400869
+      }
+    ],
+    "10.4 Create `frontend/src/utils/filename.ts` implementing `derivePdfFilename(skpFilename: string): string`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023775
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784040132667
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784088469024
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089382203
+      }
+    ],
+    "10.6 Create `frontend/src/components/ExportButton.tsx`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023858
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089401001
+      }
+    ],
+    "11.1 Create `backend/main.py` with FastAPI app and `POST /generate-pdf` route": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038023933
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784040133628
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784088469255
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089383069
+      }
+    ],
+    "11.2 Create `backend/pdf_assembler.py` implementing `assemble_pdf(payload: RenderPayload) -> bytes`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038024014
+      },
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784040134259
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784088470078
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089384158
+      }
+    ],
+    "12. Checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038024107
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089401113
+      }
+    ],
+    "13.1 Create `frontend/src/layouts/MainLayout.tsx` using CSS Grid two-column layout": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038024186
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089401298
+      }
+    ],
+    "13.3 Audit and apply accessibility attributes across all components": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038024289
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089401456
+      }
+    ],
+    "14.1 Assemble `frontend/src/App.tsx` composing all components under `AppContext.Provider`": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038024385
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089401584
+      }
+    ],
+    "15. Final checkpoint — Ensure all tests pass": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784038024514
+      },
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089401696
+      }
+    ],
+    "3. Implement SKP parser module": [
+      {
+        "executionId": "a01962e7-7a5f-417c-9c3b-96aec84e1096",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784040125387
+      }
+    ],
+    "2. Implement file upload and validation": [
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089380834
+      }
+    ],
+    "11. Implement FastAPI PDF service": [
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089384282
+      }
+    ],
+    "4. Implement Three.js interactive viewport": [
+      {
+        "executionId": "d6126eb6-23ad-4b68-9e10-3f8a6b4b20ee",
+        "chatSessionId": "sess_4ed9288e-5fa9-44ed-87bf-52927e431b90",
+        "timestamp": 1784089425015
+      }
+    ]
+  }
+}
